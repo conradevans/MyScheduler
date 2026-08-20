@@ -1,0 +1,12 @@
+services:
+  mongodb:
+    image: mongo:8
+    container_name: myscheduler-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - myscheduler_mongo_data:/data/db
+
+volumes:
+  myscheduler_mongo_data:
